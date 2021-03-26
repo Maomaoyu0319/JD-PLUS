@@ -1,0 +1,42 @@
+
+# File: .github/workflows/repo-sync.yml
+name: 同步仓库
+on:
+  schedule:
+    - cron: '0 0-16/2 * * *'
+  workflow_dispatch:
+  watch:
+    types: started
+  push:
+    branches: [ master ]
+  repository_dispatch:
+    types: sync
+jobs:
+  repo-sync:
+    env:
+      PAT: ${{ secrets.PAT }} 
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: sync-yangtingxiao
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/yangtingxiao/QuantumultX.git"
+          source_branch: "master"
+          destination_branch: "Yangtingxiao"
+          github_token: ${{ secrets.PAT }}
+
+
+      - name: sync-whyour
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/whyour/hundun.git"
+          source_branch: "master"
+          destination_branch: "Whyour"
+          github_token: ${{ secrets.PAT }}
