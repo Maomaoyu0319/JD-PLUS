@@ -26,7 +26,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/DoveBoy/qx/tree/master"
+          source_repo: "https://github.com/DoveBoy/qx/master"
           source_branch: "master"
           destination_branch: "i-chenzhe"
           github_token: ${{ secrets.PAT }}
