@@ -31,14 +31,14 @@ jobs:
           destination_branch: "Yangtingxiao"
           github_token: ${{ secrets.PAT }}
 
-      /*- name: sync-ichenzhe
-        uses: repo-sync/github-sync@v2
-        if: env.PAT
-        with:
-          source_repo: "https://github.com/RikudouPatrickstar/dust.git"
-          source_branch: "dust"
-          destination_branch: "i-chenzhe"
-          github_token: ${{ secrets.PAT }}*/
+      //- name: sync-ichenzhe
+       // uses: repo-sync/github-sync@v2
+      //  if: env.PAT
+     //   with:
+       //   source_repo: "https://github.com/RikudouPatrickstar/dust.git"
+       //   source_branch: "dust"
+      //    destination_branch: "i-chenzhe"
+        //  github_token: ${{ secrets.PAT }}
 
       - name: sync-whyour
         uses: repo-sync/github-sync@v2
