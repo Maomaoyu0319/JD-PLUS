@@ -37,7 +37,7 @@ jobs:
         with:
           source_repo: "https://github.com/yangtingxiao/QuantumultX.git"
           source_branch: "master"
-          destination_branch: "Yangtingxiao"
+          destination_branch: "yangtingxiao"
           github_token: ${{ secrets.PAT }}
 
      # - name: sync-ichenzhe
@@ -55,5 +55,5 @@ jobs:
         with:
           source_repo: "https://github.com/whyour/hundun.git"
           source_branch: "master"
-          destination_branch: "Whyour"
+          destination_branch: "whyour"
           github_token: ${{ secrets.PAT }}
