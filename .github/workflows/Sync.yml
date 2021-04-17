@@ -22,6 +22,15 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: sync-passerby-b
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://gitee.com/passerby-b/javascript.git"
+          source_branch: "master"
+          destination_branch: "passerby-b"
+          github_token: ${{ secrets.PAT }}
+
       - name: sync-yangtingxiao
         uses: repo-sync/github-sync@v2
         if: env.PAT
