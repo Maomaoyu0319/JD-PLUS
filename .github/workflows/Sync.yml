@@ -22,6 +22,15 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: sync-moposmall
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/moposmall/Script.git"
+          source_branch: "main"
+          destination_branch: "moposmall"
+          github_token: ${{ secrets.PAT }}
+
       - name: sync-passerby-b
         uses: repo-sync/github-sync@v2
         if: env.PAT
