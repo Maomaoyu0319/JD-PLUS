@@ -57,3 +57,39 @@ jobs:
           source_branch: "master"
           destination_branch: "whyour"
           github_token: ${{ secrets.PAT }}
+
+      - name: sync-star
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/star261/jd.git"
+          source_branch: "main"
+          destination_branch: "star"
+          github_token: ${{ secrets.PAT }}
+
+      - name: sync-smiek
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/smiek2221/scripts.git"
+          source_branch: "master"
+          destination_branch: "smiek"
+          github_token: ${{ secrets.PAT }}
+
+      - name: sync-jiulan
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/jiulan/platypus.git"
+          source_branch: "main"
+          destination_branch: "jiulan"
+          github_token: ${{ secrets.PAT }}
+
+      - name: sync-wenmoux
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/Wenmoux/scripts.git"
+          source_branch: "master"
+          destination_branch: "wenmoux"
+          github_token: ${{ secrets.PAT }}
