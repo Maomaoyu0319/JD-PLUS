@@ -85,11 +85,3 @@ jobs:
           destination_branch: "jiulan"
           github_token: ${{ secrets.PAT }}
 
-      - name: sync-wenmoux
-        uses: repo-sync/github-sync@v2
-        if: env.PAT
-        with:
-          source_repo: "https://github.com/Wenmoux/scripts.git"
-          source_branch: "wen"
-          destination_branch: "wenmoux"
-          github_token: ${{ secrets.PAT }}
